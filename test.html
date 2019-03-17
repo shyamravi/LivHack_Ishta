@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="build/botui.min.css">
+  <link rel="stylesheet" href="build/botui-theme-default.css">
+</head>
+<body>
+  <div class="botui-app-container" id="hello-world">
+    <bot-ui></bot-ui>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="build/botui.js"></script>
+  <script>
+    var botui = new BotUI('hello-world');
+
+    botui.message.bot({ // show first message
+      delay: 200,
+      content: 'Hey There im Ishta! Yor Chatbot assistant '
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Wowww... That's A Vibrant Name`
+      })
+    }).then(() => {
+    return botui.message.bot({ // second one
+        delay: 100, // wait 1 sec.
+        content: 'How would you like to choose your interior design?'
+      })
+    }).then(() => {
+    return botui.action.button({ // let user do something
+        delay: 100,
+        action: [
+          {
+            text: 'Pre defined Interiors'
+          },
+          {
+            text: 'Lets find it based on my personality'
+          }
+        ]
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Let’s find out what design Suits you based on your personality.`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Answer Some Simple Questions ?`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Winter Is coming ! `
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Who do you think will sit in the Iron Throne ?`
+      })
+    }).then(() => {
+    return botui.action.button({ // Wall Hangings
+        delay: 100,
+        action: [
+          {
+            text: 'Jon Snow'
+          },
+          {
+            text: 'Danerys'
+          },
+          {
+            text: 'Arya'
+          },
+          {
+            text: 'Samwell '
+          }
+        ]
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `“Leave one Wolf Alive ! and the Sheeps are never safe.”`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `The End Game is here ! Whom do you think will kill thanos ?`
+      })
+    }).then(() => {
+    return botui.action.button({ // Wall Hangings
+        delay: 100,
+        action: [
+          {
+            text: 'Thor'
+          },
+          {
+            text: 'Captain America'
+          },
+          {
+            text: 'IronMan'
+          },
+          {
+            text: 'Captain Marvel '
+          }
+        ]
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `That’s a Great Choice ! Thanos will never be able to claim Victory Now !`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Its Snack Time ! What would you like to Have ?`
+      })
+    }).then(() => {
+    return botui.action.button({ // Wall Hangings
+        delay: 100,
+        action: [
+          {
+            text: 'Hot Samosas '
+          },
+          {
+            text: 'Salads'
+          },
+          {
+            text: 'Tea'
+          },
+          {
+            text: 'Gulab Jamun'
+          }
+        ]
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Where there’s tea , There’s hope ! `
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `One final question for you ! `
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Where would you like to spend your weekend or holidays !`
+      })
+    }).then(() => {
+    return botui.action.button({ // Wall Hangings
+        delay: 100,
+        action: [
+          {
+            text: 'Himalayas'
+          },
+          {
+            text: 'Gandikota'
+          },
+          {
+            text: 'Marina'
+          },
+          {
+            text: 'Munnar '
+          }
+        ]
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `“Happiness is Himalayas”`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Give me a moment , let me analyze your result!! `
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 3000,
+        loading: true,
+        content: `The Design that suits your Personality is`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `“Shabby Chic”`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `Elegant in a creative way .`
+      })
+    }).then(res => {
+    return botui.message.bot({
+        delay: 100,
+        content: `The core theme of this style is breathing new life into pieces of furniture while embracing colors and finishes .`
+      })
+    }).then(() => {
+    return botui.action.button({ // Wall Hangings
+        delay: 100,
+        action: [
+          {
+            text: 'View Samples and quotes'
+          },
+          {
+            text: 'I don’t like Shabby Chic , Retake quiz'
+          },
+          {
+            text: 'Go back to main menu'
+          },
+          {
+            text: 'Choose from predefined menu '
+          }
+        ]
+      })
+    })
+      
+      
+        //.then(res => {
+    
+    
+    
+    
+//    return 
+//    botui.message.add({
+//        delay: 100,
+//        loading: true,
+//        type: 'html',
+//        content: '<br/>Here are a few suggestions...<br/><br><a target="_blank" href="https://www.amazon.in/SLK-Wood-Products-Wooden-Shelf/dp/B07BQ43WMS/ref=sr_1_5?ie=UTF8&qid=1552649055&sr=8-5&keywords=floating+wall+shelves+black+wood"><img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/41tGzHDanvL.jpg"/></a>&nbsp;&nbsp;<a target="_blank" href="https://www.amazon.in/Santosha-Decor-Hexagon-Floating-Shelves/dp/B076BMYKKT/ref=sr_1_6?ie=UTF8&qid=1552649055&sr=8-6&keywords=floating+wall+shelves+black+wood"><img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/61W7uVyjDRL._SL1024_.jpg"/></a>&nbsp;&nbsp;<a target="_blank" href="https://www.amazon.in/Amaze-Shoppee-Decoration-Intersecting-Floating/dp/B07HNGPGN5/ref=sr_1_7?ie=UTF8&qid=1552649055&sr=8-7&keywords=floating+wall+shelves+black+wood"><img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/71-urS0QoCL._SL1500_.jpg"/></a><a target="_blank" href="https://www.amazon.in/Santosha-Decor-Square-Floating-Shelves/dp/B076BRTHVY/ref=sr_1_11_sspa?ie=UTF8&qid=1552649055&sr=8-11-spons&keywords=floating+wall+shelves+black+wood&psc=1">&nbsp;&nbsp;<img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/511wkWkqcSL.jpg"/></a>&nbsp;&nbsp;<a target="_blank" href="https://www.amazon.in/Dreamerro-Designer-Floating-Modern-Shelve/dp/B01N6P0APD/ref=sr_1_1_sspa?ie=UTF8&qid=1552649055&sr=8-1-spons&keywords=floating+wall+shelves+black+wood&psc=1"><img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/51o5FI22lyL.jpg"/></a>&nbsp;&nbsp;<a target="_blank" href="https://www.amazon.in/Rezone-Art-Hexagon-Floating-Shelves/dp/B07BZ4N14G/ref=sr_1_2_sspa?ie=UTF8&qid=1552649055&sr=8-2-spons&keywords=floating+wall+shelves+black+wood&psc=1"><img width="40%" height="40%" src="https://images-na.ssl-images-amazon.com/images/I/617JtDeFJiL._SL1024_.jpg"/></a><br>'
+//      })  
+    //})
+      
+    
+  </script>
+
+</body>
+</html>
